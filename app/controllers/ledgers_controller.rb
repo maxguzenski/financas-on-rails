@@ -4,7 +4,8 @@ class LedgersController < ApplicationController
 
   def index
     @ledgers = Ledger.find :all, :order => 'date desc'
-    @ledger = Ledger.new(:date => Date.today)
+    @tags    = Tag.find :all, :order => 'name'
+    @ledger  = Ledger.new(:date => Date.today)
   end
 
   def create

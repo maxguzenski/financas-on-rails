@@ -919,3 +919,761 @@ Rendering ledgers/index
   [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
   [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
 Completed in 107ms (View: 59, DB: 14) | 200 OK [http://localhost/ledgers]
+** acts_as_taggable_on: initialized properly.
+  [4;36;1mTag Load (180.0ms)[0m   [0;1mSELECT * FROM tags [0m
+  [4;35;1mTag Load (168.0ms)[0m   [0mSELECT * FROM tags WHERE (tags.id = 1) [0m
+  [4;36;1mTag Load (3.0ms)[0m   [0;1mSELECT * FROM tags WHERE (tags.id = 1) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT * FROM tags WHERE (tags.id = 1) [0m
+  [4;36;1mTag Load (3.0ms)[0m   [0;1mSELECT * FROM tags WHERE (tags.id = 1) [0m
+  [4;35;1mTagging Load (18.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;36;1mLedger Load (15.0ms)[0m   [0;1mSELECT * FROM ledgers [0m
+  [4;35;1mLedger Load (17.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 11) [0m
+  [4;36;1mTag Load (27.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mLedger Load (14.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;36;1mTag Load (22.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (3.0ms)[0m   [0mSELECT * FROM tags [0m
+  [4;36;1mTag Load (16.0ms)[0m   [0;1mSELECT * FROM tags WHERE (tags.id = 3) [0m
+  [4;35;1mTagging Load (12.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;36;1mLedger Load (3.0ms)[0m   [0;1mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mActiveRecord::ActiveRecordError: A coluna 'VALUE' não está presente em nenhuma tabela da lista FROM, ou aparece dentro de uma especificação de junção e está fora do escopo da especificação de junção, ou aparece em uma cláusula HAVING e não está na lista GROUP BY. Se esta for uma instrução CREATE ou ALTER TABLE, então, 'VALUE' não é uma coluna da tabela de destino.: SELECT sum(VALUE) AS sum_value FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mActiveRecord::ActiveRecordError: A coluna 'SS' não está presente em nenhuma tabela da lista FROM, ou aparece dentro de uma especificação de junção e está fora do escopo da especificação de junção, ou aparece em uma cláusula HAVING e não está na lista GROUP BY. Se esta for uma instrução CREATE ou ALTER TABLE, então, 'SS' não é uma coluna da tabela de destino.: SELECT sum(SS) AS sum_ss FROM taggings WHERE (taggings.tag_id = 3) [0m
+** acts_as_taggable_on: initialized properly.
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:04:31) [GET]
+  [4;36;1mLedger Load (49.0ms)[0m   [0;1mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;35;1mTag Load (7.0ms)[0m   [0mSELECT * FROM tags ORDER BY name[0m
+Rendering ledgers/index
+  [4;36;1mTag Load (18.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTagging Load (3.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;35;1mLedger Load (3.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;36;1mTagging Load (7.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 763ms (View: 272, DB: 93) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:05:31) [GET]
+  [4;35;1mLedger Load (9.0ms)[0m   [0mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;36;1mTag Load (3.0ms)[0m   [0;1mSELECT * FROM tags ORDER BY name[0m
+Rendering ledgers/index
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (3.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (3.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTagging Load (3.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;35;1mTagging Load (4.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;36;1mLedger Load (4.0ms)[0m   [0;1mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;35;1mTagging Load (3.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 307ms (View: 207, DB: 34) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:06:16) [GET]
+  [4;36;1mLedger Load (12.0ms)[0m   [0;1mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;35;1mTag Load (3.0ms)[0m   [0mSELECT * FROM tags ORDER BY name[0m
+Rendering ledgers/index
+  [4;36;1mTag Load (3.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;35;1mLedger Load (3.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 186ms (View: 81, DB: 31) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:07:12) [GET]
+  [4;35;1mLedger Load (7.0ms)[0m   [0mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT * FROM tags ORDER BY name[0m
+Rendering ledgers/index
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (4.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;35;1mTagging Load (3.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;36;1mLedger Load (3.0ms)[0m   [0;1mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 222ms (View: 126, DB: 27) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:08:20) [GET]
+  [4;36;1mLedger Load (6.0ms)[0m   [0;1mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT * FROM tags ORDER BY name[0m
+Rendering ledgers/index
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (3.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTagging Load (1.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;35;1mLedger Load (2.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 171ms (View: 79, DB: 22) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:08:55) [GET]
+  [4;35;1mLedger Load (6.0ms)[0m   [0mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT * FROM tags ORDER BY name[0m
+Rendering ledgers/index
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (3.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTagging Load (1.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;36;1mLedger Load (2.0ms)[0m   [0;1mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 278ms (View: 187, DB: 22) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:09:05) [GET]
+  [4;36;1mLedger Load (7.0ms)[0m   [0;1mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;35;1mTag Load (3.0ms)[0m   [0mSELECT * FROM tags ORDER BY name[0m
+Rendering ledgers/index
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;35;1mLedger Load (3.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;36;1mTagging Load (3.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 236ms (View: 102, DB: 26) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:09:45) [GET]
+  [4;35;1mLedger Load (9.0ms)[0m   [0mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT * FROM tags ORDER BY name[0m
+Rendering ledgers/index
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;36;1mLedger Load (3.0ms)[0m   [0;1mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 172ms (View: 91, DB: 25) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:10:11) [GET]
+  [4;36;1mLedger Load (6.0ms)[0m   [0;1mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT * FROM tags ORDER BY name[0m
+Rendering ledgers/index
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (3.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTagging Load (3.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;36;1mTagging Load (3.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;35;1mLedger Load (3.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 228ms (View: 125, DB: 26) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:10:16) [GET]
+  [4;35;1mLedger Load (6.0ms)[0m   [0mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;36;1mTag Load (3.0ms)[0m   [0;1mSELECT * FROM tags ORDER BY name[0m
+Rendering ledgers/index
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (3.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (3.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTagging Load (5.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;35;1mTagging Load (7.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;36;1mLedger Load (5.0ms)[0m   [0;1mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;35;1mTagging Load (4.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 263ms (View: 147, DB: 38) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:10:19) [GET]
+  [4;36;1mLedger Load (7.0ms)[0m   [0;1mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;35;1mTag Load (3.0ms)[0m   [0mSELECT * FROM tags ORDER BY name[0m
+Rendering ledgers/index
+  [4;36;1mTag Load (4.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (3.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (3.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTagging Load (3.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;36;1mTagging Load (3.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;35;1mLedger Load (3.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;36;1mTagging Load (3.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 188ms (View: 97, DB: 32) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:11:24) [GET]
+  [4;35;1mLedger Load (9.0ms)[0m   [0mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT * FROM tags ORDER BY name[0m
+Rendering ledgers/index
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;36;1mLedger Load (3.0ms)[0m   [0;1mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 212ms (View: 82, DB: 26) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:12:09) [GET]
+  [4;36;1mLedger Load (5.0ms)[0m   [0;1mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT * FROM tags ORDER BY name[0m
+Rendering ledgers/index
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;35;1mLedger Load (2.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 286ms (View: 176, DB: 21) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:12:52) [GET]
+  [4;35;1mLedger Load (5.0ms)[0m   [0mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT * FROM tags ORDER BY name[0m
+Rendering ledgers/index
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTagging Load (1.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;35;1mTagging Load (3.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;36;1mLedger Load (3.0ms)[0m   [0;1mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 140ms (View: 83, DB: 21) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:13:18) [GET]
+  [4;36;1mLedger Load (8.0ms)[0m   [0;1mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT * FROM tags ORDER BY name[0m
+Rendering ledgers/index
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (3.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (4.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;36;1mTagging Load (3.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;35;1mLedger Load (4.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 117ms (View: 49, DB: 30) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:13:19) [GET]
+  [4;35;1mLedger Load (5.0ms)[0m   [0mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT * FROM tags ORDER BY name[0m
+Rendering ledgers/index
+  [4;35;1mTag Load (3.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (3.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;36;1mLedger Load (2.0ms)[0m   [0;1mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 132ms (View: 54, DB: 23) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:13:32) [GET]
+  [4;36;1mLedger Load (5.0ms)[0m   [0;1mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT * FROM tags ORDER BY name[0m
+Rendering ledgers/index
+  [4;36;1mTag Load (3.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;35;1mLedger Load (2.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 472ms (View: 341, DB: 22) | 200 OK [http://localhost/ledgers]
+** acts_as_taggable_on: initialized properly.
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:15:07) [GET]
+  [4;36;1mLedger Load (11.0ms)[0m   [0;1mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT * FROM tags ORDER BY name[0m
+Rendering template within layouts/application
+Rendering ledgers/index
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (3.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;35;1mLedger Load (3.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 848ms (View: 642, DB: 29) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:15:54) [GET]
+  [4;35;1mLedger Load (7.0ms)[0m   [0mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT * FROM tags ORDER BY name[0m
+Rendering template within layouts/application
+Rendering ledgers/index
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (3.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTagging Load (3.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;35;1mTagging Load (3.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;36;1mLedger Load (2.0ms)[0m   [0;1mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 269ms (View: 181, DB: 26) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:17:03) [GET]
+  [4;36;1mLedger Load (6.0ms)[0m   [0;1mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT * FROM tags ORDER BY name[0m
+Rendering template within layouts/application
+Rendering ledgers/index
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;35;1mLedger Load (2.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 170ms (View: 83, DB: 22) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:18:14) [GET]
+  [4;35;1mLedger Load (8.0ms)[0m   [0mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT * FROM tags ORDER BY name[0m
+Rendering template within layouts/application
+Rendering ledgers/index
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (3.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;35;1mTagging Load (3.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;36;1mLedger Load (2.0ms)[0m   [0;1mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 234ms (View: 142, DB: 26) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:18:41) [GET]
+  [4;36;1mLedger Load (12.0ms)[0m   [0;1mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT * FROM tags ORDER BY name[0m
+Rendering template within layouts/application
+Rendering ledgers/index
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;35;1mLedger Load (2.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 200ms (View: 103, DB: 28) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:19:21) [GET]
+  [4;35;1mLedger Load (5.0ms)[0m   [0mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT * FROM tags ORDER BY name[0m
+Rendering template within layouts/application
+Rendering ledgers/index
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;36;1mLedger Load (2.0ms)[0m   [0;1mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;35;1mTagging Load (1.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 272ms (View: 185, DB: 19) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:19:56) [GET]
+  [4;36;1mLedger Load (5.0ms)[0m   [0;1mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT * FROM tags ORDER BY name[0m
+Rendering template within layouts/application
+Rendering ledgers/index
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (6.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;36;1mTagging Load (3.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;35;1mLedger Load (2.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 252ms (View: 92, DB: 26) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:19:58) [GET]
+  [4;35;1mLedger Load (5.0ms)[0m   [0mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;36;1mTag Load (3.0ms)[0m   [0;1mSELECT * FROM tags ORDER BY name[0m
+Rendering template within layouts/application
+Rendering ledgers/index
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;36;1mLedger Load (2.0ms)[0m   [0;1mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;35;1mTagging Load (1.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 152ms (View: 81, DB: 21) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:20:40) [GET]
+  [4;36;1mLedger Load (6.0ms)[0m   [0;1mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT * FROM tags ORDER BY name[0m
+Rendering template within layouts/application
+Rendering ledgers/index
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;35;1mLedger Load (3.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 325ms (View: 140, DB: 22) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:20:54) [GET]
+  [4;35;1mLedger Load (5.0ms)[0m   [0mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT * FROM tags ORDER BY name[0m
+Rendering template within layouts/application
+Rendering ledgers/index
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;36;1mLedger Load (2.0ms)[0m   [0;1mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;35;1mTagging Load (1.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 223ms (View: 139, DB: 20) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:21:08) [GET]
+  [4;36;1mLedger Load (6.0ms)[0m   [0;1mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT * FROM tags ORDER BY name[0m
+Rendering template within layouts/application
+Rendering ledgers/index
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTagging Load (1.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;36;1mTagging Load (3.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;35;1mLedger Load (3.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 131ms (View: 63, DB: 22) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:21:10) [GET]
+  [4;35;1mLedger Load (7.0ms)[0m   [0mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT * FROM tags ORDER BY name[0m
+Rendering template within layouts/application
+Rendering ledgers/index
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTagging Load (1.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;35;1mTagging Load (1.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;36;1mLedger Load (2.0ms)[0m   [0;1mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 159ms (View: 60, DB: 19) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:21:10) [GET]
+  [4;36;1mLedger Load (9.0ms)[0m   [0;1mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT * FROM tags ORDER BY name[0m
+Rendering template within layouts/application
+Rendering ledgers/index
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTagging Load (1.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;35;1mLedger Load (2.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;36;1mTagging Load (1.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 295ms (View: 177, DB: 22) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:21:12) [GET]
+  [4;35;1mLedger Load (5.0ms)[0m   [0mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT * FROM tags ORDER BY name[0m
+Rendering template within layouts/application
+Rendering ledgers/index
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;36;1mLedger Load (2.0ms)[0m   [0;1mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;35;1mTagging Load (1.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 125ms (View: 74, DB: 20) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:23:00) [GET]
+  [4;36;1mLedger Load (9.0ms)[0m   [0;1mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT * FROM tags ORDER BY name[0m
+Rendering template within layouts/application
+Rendering ledgers/index
+  [4;36;1mTag Load (10.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (3.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTagging Load (4.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;35;1mLedger Load (3.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;36;1mTagging Load (3.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 153ms (View: 73, DB: 38) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:23:13) [GET]
+  [4;35;1mLedger Load (6.0ms)[0m   [0mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;36;1mTag Load (3.0ms)[0m   [0;1mSELECT * FROM tags ORDER BY name[0m
+Rendering template within layouts/application
+Rendering ledgers/index
+  [4;35;1mTag Load (4.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (3.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;36;1mLedger Load (3.0ms)[0m   [0;1mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 160ms (View: 78, DB: 27) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:23:18) [GET]
+  [4;36;1mLedger Load (8.0ms)[0m   [0;1mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT * FROM tags ORDER BY name[0m
+Rendering template within layouts/application
+Rendering ledgers/index
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (6.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTagging Load (3.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;35;1mLedger Load (4.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 680ms (View: 486, DB: 31) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:23:21) [GET]
+  [4;35;1mLedger Load (6.0ms)[0m   [0mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;36;1mTag Load (3.0ms)[0m   [0;1mSELECT * FROM tags ORDER BY name[0m
+Rendering template within layouts/application
+Rendering ledgers/index
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (3.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;36;1mLedger Load (2.0ms)[0m   [0;1mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 122ms (View: 57, DB: 24) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:23:33) [GET]
+  [4;36;1mLedger Load (5.0ms)[0m   [0;1mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT * FROM tags ORDER BY name[0m
+Rendering template within layouts/application
+Rendering ledgers/index
+  [4;36;1mTag Load (3.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (4.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTagging Load (1.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;35;1mLedger Load (4.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;36;1mTagging Load (1.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 112ms (View: 54, DB: 23) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:23:35) [GET]
+  [4;35;1mLedger Load (5.0ms)[0m   [0mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT * FROM tags ORDER BY name[0m
+Rendering template within layouts/application
+Rendering ledgers/index
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;36;1mLedger Load (2.0ms)[0m   [0;1mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;35;1mTagging Load (1.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 105ms (View: 55, DB: 19) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:23:39) [GET]
+  [4;36;1mLedger Load (8.0ms)[0m   [0;1mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;35;1mTag Load (3.0ms)[0m   [0mSELECT * FROM tags ORDER BY name[0m
+Rendering template within layouts/application
+Rendering ledgers/index
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (3.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;35;1mLedger Load (2.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 128ms (View: 66, DB: 25) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:23:50) [GET]
+  [4;35;1mLedger Load (7.0ms)[0m   [0mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;36;1mTag Load (3.0ms)[0m   [0;1mSELECT * FROM tags ORDER BY name[0m
+Rendering template within layouts/application
+Rendering ledgers/index
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTagging Load (3.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;36;1mLedger Load (2.0ms)[0m   [0;1mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 125ms (View: 60, DB: 24) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:23:59) [GET]
+  [4;36;1mLedger Load (5.0ms)[0m   [0;1mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT * FROM tags ORDER BY name[0m
+Rendering template within layouts/application
+Rendering ledgers/index
+  [4;36;1mTag Load (5.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (3.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTagging Load (3.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;35;1mLedger Load (3.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 138ms (View: 72, DB: 27) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#create (for 127.0.0.1 at 2009-09-14 13:24:31) [POST]
+  Parameters: {"authenticity_token"=>"mc8/5ZOfrpPde81FdsTzgyv1aBOMY76CS+pAnI8f42o=", "ledger"=>{"date"=>"14/09/2009", "value"=>"200", "tag_list"=>"@carteira, namorada, festa", "description"=>""}, "commit"=>"add"}
+  [4;35;1mSQL (153.0ms)[0m   [0mINSERT INTO ledgers (date, value, description, created_at, updated_at) VALUES('2009-09-14', 200.0, '', '2009-09-14 16:24:31', '2009-09-14 16:24:31')[0m
+  [4;36;1mTag Load (12.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 13) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 13) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (9.0ms)[0m   [0;1mSELECT * FROM tags WHERE (name LIKE '@carteira') [0m
+  [4;35;1mSQL (7.0ms)[0m   [0mINSERT INTO taggings (tag_id, taggable_id, tagger_id, tagger_type, taggable_type, context, created_at) VALUES(1, 13, NULL, NULL, 'Ledger', 'tags', '2009-09-14 16:24:32')[0m
+  [4;36;1mTag Load (5.0ms)[0m   [0;1mSELECT * FROM tags WHERE (name LIKE 'namorada') [0m
+  [4;35;1mTag Load (8.0ms)[0m   [0mSELECT tags.id FROM tags WHERE (tags.name = 'namorada') [0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mINSERT INTO tags (name) VALUES('namorada')[0m
+  [4;35;1mSQL (8.0ms)[0m   [0mINSERT INTO taggings (tag_id, taggable_id, tagger_id, tagger_type, taggable_type, context, created_at) VALUES(4, 13, NULL, NULL, 'Ledger', 'tags', '2009-09-14 16:24:32')[0m
+  [4;36;1mTag Load (6.0ms)[0m   [0;1mSELECT * FROM tags WHERE (name LIKE 'festa') [0m
+  [4;35;1mTag Load (5.0ms)[0m   [0mSELECT tags.id FROM tags WHERE (tags.name = 'festa') [0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mINSERT INTO tags (name) VALUES('festa')[0m
+  [4;35;1mSQL (7.0ms)[0m   [0mINSERT INTO taggings (tag_id, taggable_id, tagger_id, tagger_type, taggable_type, context, created_at) VALUES(5, 13, NULL, NULL, 'Ledger', 'tags', '2009-09-14 16:24:32')[0m
+Redirected to http://localhost:3000/ledgers
+Completed in 499ms (DB: 232) | 302 Found [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:24:32) [GET]
+  [4;36;1mLedger Load (5.0ms)[0m   [0;1mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT * FROM tags ORDER BY name[0m
+Rendering template within layouts/application
+Rendering ledgers/index
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (5.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 13) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;35;1mLedger Load (10.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 13) [0m
+  [4;36;1mTagging Load (1.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;35;1mLedger Load (2.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;36;1mTagging Load (10.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 5) [0m
+  [4;35;1mLedger Load (2.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 13) [0m
+  [4;36;1mTagging Load (8.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 4) [0m
+  [4;35;1mLedger Load (2.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 13) [0m
+  [4;36;1mTagging Load (1.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 190ms (View: 84, DB: 54) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#create (for 127.0.0.1 at 2009-09-14 13:24:46) [POST]
+  Parameters: {"authenticity_token"=>"mc8/5ZOfrpPde81FdsTzgyv1aBOMY76CS+pAnI8f42o=", "ledger"=>{"date"=>"14/09/2009", "value"=>"-15", "tag_list"=>"@carteira, almoço", "description"=>""}, "commit"=>"add"}
+  [4;35;1mSQL (10.0ms)[0m   [0mINSERT INTO ledgers (date, value, description, created_at, updated_at) VALUES('2009-09-14', -15.0, '', '2009-09-14 16:24:46', '2009-09-14 16:24:46')[0m
+  [4;36;1mTag Load (35.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 14) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (3.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 14) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT * FROM tags WHERE (name LIKE '@carteira') [0m
+  [4;35;1mSQL (7.0ms)[0m   [0mINSERT INTO taggings (tag_id, taggable_id, tagger_id, tagger_type, taggable_type, context, created_at) VALUES(1, 14, NULL, NULL, 'Ledger', 'tags', '2009-09-14 16:24:46')[0m
+  [4;36;1mTag Load (6.0ms)[0m   [0;1mSELECT * FROM tags WHERE (name LIKE 'almoço') [0m
+  [4;35;1mTag Load (6.0ms)[0m   [0mSELECT tags.id FROM tags WHERE (tags.name = 'almoço') [0m
+  [4;36;1mSQL (7.0ms)[0m   [0;1mINSERT INTO tags (name) VALUES('almoço')[0m
+  [4;35;1mSQL (7.0ms)[0m   [0mINSERT INTO taggings (tag_id, taggable_id, tagger_id, tagger_type, taggable_type, context, created_at) VALUES(6, 14, NULL, NULL, 'Ledger', 'tags', '2009-09-14 16:24:46')[0m
+Redirected to http://localhost:3000/ledgers
+Completed in 218ms (DB: 82) | 302 Found [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:24:47) [GET]
+  [4;36;1mLedger Load (6.0ms)[0m   [0;1mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT * FROM tags ORDER BY name[0m
+Rendering template within layouts/application
+Rendering ledgers/index
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (3.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 14) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 13) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;36;1mLedger Load (3.0ms)[0m   [0;1mSELECT * FROM ledgers WHERE (ledgers.id = 13) [0m
+  [4;35;1mLedger Load (7.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 14) [0m
+  [4;36;1mTagging Load (3.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;35;1mLedger Load (2.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;36;1mTagging Load (7.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 6) [0m
+  [4;35;1mLedger Load (2.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 14) [0m
+  [4;36;1mTagging Load (4.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 5) [0m
+  [4;35;1mLedger Load (2.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 13) [0m
+  [4;36;1mTagging Load (1.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 4) [0m
+  [4;35;1mLedger Load (2.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 13) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 311ms (View: 224, DB: 54) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#create (for 127.0.0.1 at 2009-09-14 13:25:10) [POST]
+  Parameters: {"authenticity_token"=>"mc8/5ZOfrpPde81FdsTzgyv1aBOMY76CS+pAnI8f42o=", "ledger"=>{"date"=>"14/09/2009", "value"=>"-20", "tag_list"=>"@carteira", "description"=>"deswcrujhoi huihioh "}, "commit"=>"add"}
+  [4;35;1mSQL (8.0ms)[0m   [0mINSERT INTO ledgers (date, value, description, created_at, updated_at) VALUES('2009-09-14', -20.0, 'deswcrujhoi huihioh ', '2009-09-14 16:25:10', '2009-09-14 16:25:10')[0m
+  [4;36;1mTag Load (12.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 15) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 15) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT * FROM tags WHERE (name LIKE '@carteira') [0m
+  [4;35;1mSQL (7.0ms)[0m   [0mINSERT INTO taggings (tag_id, taggable_id, tagger_id, tagger_type, taggable_type, context, created_at) VALUES(1, 15, NULL, NULL, 'Ledger', 'tags', '2009-09-14 16:25:10')[0m
+Redirected to http://localhost:3000/ledgers
+Completed in 92ms (DB: 30) | 302 Found [http://localhost/ledgers]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:25:10) [GET]
+  [4;36;1mLedger Load (5.0ms)[0m   [0;1mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT * FROM tags ORDER BY name[0m
+Rendering template within layouts/application
+Rendering ledgers/index
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (3.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 15) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 14) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 13) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;35;1mLedger Load (2.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 13) [0m
+  [4;36;1mLedger Load (2.0ms)[0m   [0;1mSELECT * FROM ledgers WHERE (ledgers.id = 14) [0m
+  [4;35;1mLedger Load (7.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 15) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;35;1mLedger Load (2.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 6) [0m
+  [4;35;1mLedger Load (2.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 14) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 5) [0m
+  [4;35;1mLedger Load (2.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 13) [0m
+  [4;36;1mTagging Load (1.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 4) [0m
+  [4;35;1mLedger Load (2.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 13) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 149ms (View: 71, DB: 49) | 200 OK [http://localhost/ledgers]
+
+
+Processing LedgersController#destroy (for 127.0.0.1 at 2009-09-14 13:25:16) [DELETE]
+  Parameters: {"authenticity_token"=>"mc8/5ZOfrpPde81FdsTzgyv1aBOMY76CS+pAnI8f42o=", "id"=>"15"}
+  [4;35;1mLedger Load (2.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 15) [0m
+  [4;36;1mTagging Load (11.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.taggable_id = 15 AND taggings.taggable_type = 'Ledger' AND (taggings.context = 'tags')) [0m
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT * FROM tags WHERE (tags.id = 1) [0m
+  [4;36;1mTagging Destroy (60.0ms)[0m   [0;1mDELETE FROM taggings WHERE id = 16[0m
+  [4;35;1mTagging Load (7.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.taggable_id = 15 AND taggings.taggable_type = 'Ledger') [0m
+  [4;36;1mLedger Destroy (5.0ms)[0m   [0;1mDELETE FROM ledgers WHERE id = 15[0m
+Redirected to http://localhost:3000/ledgers
+Completed in 139ms (DB: 86) | 302 Found [http://localhost/ledgers/15]
+
+
+Processing LedgersController#index (for 127.0.0.1 at 2009-09-14 13:25:16) [GET]
+  [4;35;1mLedger Load (6.0ms)[0m   [0mSELECT * FROM ledgers ORDER BY date desc[0m
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT * FROM tags ORDER BY name[0m
+Rendering template within layouts/application
+Rendering ledgers/index
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id IS NULL) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 14) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 13) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 12) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_id = 11) AND (taggings.taggable_type = 'Ledger') AND (context = 'tags')) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT * FROM taggings WHERE (taggings.tag_id = 1) [0m
+  [4;35;1mLedger Load (2.0ms)[0m   [0mSELECT * FROM ledgers WHERE (ledgers.id = 13) [0m
+  [4;36;1mLedger Load (1.0ms)[0m   [0;1mSELECT * FROM ledgers WHERE (ledgers.id = 14) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 3) [0m
+  [4;36;1mLedger Load (2.0ms)[0m   [0;1mSELECT * FROM ledgers WHERE (ledgers.id = 12) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 6) [0m
+  [4;36;1mLedger Load (1.0ms)[0m   [0;1mSELECT * FROM ledgers WHERE (ledgers.id = 14) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 5) [0m
+  [4;36;1mLedger Load (2.0ms)[0m   [0;1mSELECT * FROM ledgers WHERE (ledgers.id = 13) [0m
+  [4;35;1mTagging Load (6.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 4) [0m
+  [4;36;1mLedger Load (1.0ms)[0m   [0;1mSELECT * FROM ledgers WHERE (ledgers.id = 13) [0m
+  [4;35;1mTagging Load (1.0ms)[0m   [0mSELECT * FROM taggings WHERE (taggings.tag_id = 2) [0m
+Completed in 133ms (View: 56, DB: 41) | 200 OK [http://localhost/ledgers]

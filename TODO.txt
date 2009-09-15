@@ -1,3 +1,3 @@
-- listar as tags com os valores acumulados
+ok - listar as tags com os valores acumulados
 - paginar por mês
 - exportar para csv

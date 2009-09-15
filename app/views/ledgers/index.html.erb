@@ -1,31 +1,48 @@
-<table style="border:1px solid black">
-  <thead>
-    <tr>
-      <th>Data</th>
-      <th>Valor</th>
-      <th>Tags</th>
-      <th>Descrição</th>
-      <th></th>
-    </tr>
-    <% form_for @ledger do |f| %>
-      <tr>
-        <td><%= f.text_field :date, :value => @ledger.date.to_s_br  %></td>
-        <td><%= f.text_field :value  %></td>
-        <td><%= f.text_field :tag_list  %></td>
-        <td><%= f.text_field :description  %></td>
-        <td><%= f.submit "add"  %></td>
-      </tr>
-    <% end %>
-  </thead>
-  <% for ledger in @ledgers %>
-    <tr>
-      <td><%= ledger.date.to_s_br %></td>
-      <td><%= ledger.value.reais_contabeis %></td>
-      <td><%= ledger.tag_list %></td>
-      <td><%= ledger.description %></td>
-      <td>
-        <%= link_to "deletar",ledger, :method => :delete, :confirm => 'Tem certeza que deseja remover este registro?' %>
-      </td>
-    </tr>
-  <% end %>
+<table style="width:950px">
+  <tr>
+    <td style="vertical-align:top;">
+      <table style="border:1px solid black;width:100%">
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Valor</th>
+            <th>Tags</th>
+            <th>Descrição</th>
+            <th></th>
+          </tr>
+          <% form_for @ledger do |f| %>
+            <tr>
+              <td><%= f.text_field :date, :value => @ledger.date.to_s_br, :maxlength => 10  %></td>
+              <td><%= f.text_field :value, :maxlength => 10  %></td>
+              <td><%= f.text_field :tag_list, :style => "width: 200px"  %></td>
+              <td><%= f.text_field :description  %></td>
+              <td><%= f.submit "add"  %></td>
+            </tr>
+          <% end %>
+        </thead>
+        <% for ledger in @ledgers %>
+          <tr>
+            <td><%= ledger.date.to_s_br %></td>
+            <td><%= ledger.value.reais_contabeis %></td>
+            <td><%= ledger.tag_list %></td>
+            <td><%= ledger.description %></td>
+            <td>
+              <%= link_to "deletar",ledger, :method => :delete, :confirm => 'Tem certeza que deseja remover este registro?' %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </td>
+    <td style="vertical-align:top;width:200px">
+      <table style="border:1px solid black;width:100%">
+        <% for tag in @tags %>
+          <tr>
+            <td><%= tag.name  %> </td>
+            <td><%= sum_ledgers_for(tag).reais_contabeis  %></td>
+          </tr>
+        <% end %>
+      </table>
+    </td>
+  </tr>
 </table>
+  
