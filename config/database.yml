@@ -16,5 +16,8 @@ test:
       adapter: jdbc
 
 production:
-      host: localhost
-      adapter: jdbc
+      host: mysql.guzenski.com.br
+      adapter: mysql
+      database: financas_on_rails
+      username: guzenski
+      
