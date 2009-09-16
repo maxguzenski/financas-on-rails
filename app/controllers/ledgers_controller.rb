@@ -3,7 +3,7 @@ class LedgersController < ApplicationController
   before_filter :date_convert
 
   def index
-    @ledgers = Ledger.find :all, :order => 'date desc'
+    @ledgers = Ledger.find :all, :order => 'date desc, id desc'
     @tags    = Tag.find :all, :order => 'name'
     @ledger  = Ledger.new(:date => Date.today)
   end
