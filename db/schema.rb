@@ -11,29 +11,32 @@
 
 ActiveRecord::Schema.define(:version => 20090909182841) do
 
-  create_table "ledgers", :force => true do |t|
-    t.date      "date"
-    t.decimal   "value",       :precision => 14, :scale => 2
-    t.string    "description"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
+  create_table "ledgers", :id => false, :force => true do |t|
+    t.integer  "id",          :limit => nil,                                :null => false
+    t.date     "date",                                                      :null => false
+    t.decimal  "value",                      :precision => 14, :scale => 2, :null => false
+    t.string   "description",                                               :null => false
+    t.datetime "created_at",                                                :null => false
+    t.datetime "updated_at",                                                :null => false
   end
 
-  create_table "taggings", :force => true do |t|
-    t.integer   "tag_id"
-    t.integer   "taggable_id"
-    t.integer   "tagger_id"
-    t.string    "tagger_type"
-    t.string    "taggable_type"
-    t.string    "context"
-    t.timestamp "created_at"
+  create_table "taggings", :id => false, :force => true do |t|
+    t.integer  "id",            :limit => nil, :null => false
+    t.integer  "tag_id",                       :null => false
+    t.integer  "taggable_id",                  :null => false
+    t.integer  "tagger_id",                    :null => false
+    t.string   "tagger_type",                  :null => false
+    t.string   "taggable_type",                :null => false
+    t.string   "context",                      :null => false
+    t.datetime "created_at",                   :null => false
   end
 
   add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
   add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
 
-  create_table "tags", :force => true do |t|
-    t.string "name"
+  create_table "tags", :id => false, :force => true do |t|
+    t.integer "id",   :limit => nil, :null => false
+    t.string  "name",                :null => false
   end
 
 end
